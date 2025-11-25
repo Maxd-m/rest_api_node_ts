@@ -1,17 +1,9 @@
 import express from "express";
+import router from "./router";
 
 const server = express()
 
-// routing
-//              request (lo que se pide)
-//              response (lo que se obtiene)
-server.get('/', (req, res) => {
-
-  const datos = [
-    { id: 1, nombre: "Juan" },
-    { id: 2, nombre: "Juan" },
-  ];
-  res.json(datos)
-})
+// se ejecuta en todos los request
+server.use('/api', router)
 
 export default server
