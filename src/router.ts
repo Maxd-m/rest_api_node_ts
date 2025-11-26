@@ -6,6 +6,7 @@ import {
   getProducts,
   updateAvailability,
   updateProduct,
+  deleteProduct,
 } from "./handlers/product";
 import { handleInputErrors } from "./middleware";
 
@@ -45,7 +46,7 @@ router.post("/", (req, res) => {
 
 router.put(
   "/:id",
-  // validacion
+  param("id").isInt().withMessage("ID no válido"),
   body("name")
     .notEmpty()
     .withMessage("El nombre de producto no puede ser nulo"),
@@ -63,10 +64,15 @@ router.put(
   updateProduct
 );
 
-router.patch("/:id", updateAvailability);
+router.patch("/:id", 
+  param("id").isInt().withMessage("ID no válido"),
+  handleInputErrors,
+  updateAvailability);
 
-router.delete("/", (req, res) => {
-  res.json("Desde delete");
-});
+router.delete("/:id", 
+  param("id").isInt().withMessage("ID no válido"),
+  handleInputErrors,
+  deleteProduct
+);
 
 export default router;
