@@ -40,10 +40,6 @@ router.post(
   createProduct
 );
 
-router.post("/", (req, res) => {
-  res.json("Desde post");
-});
-
 router.put(
   "/:id",
   param("id").isInt().withMessage("ID no válido"),
