@@ -3,7 +3,7 @@ import Product from "../models/Product.model";
 
 export const getProducts = async (req: Request, res: Response) => {
   const products = await Product.findAll({
-      order: [["price", "DESC"]],
+      order: [["id", "DESC"]],
       //attributes: { exclude: ["createdAt", "updatedAt", "availability"] },
     });
     res.json({ data: products });
