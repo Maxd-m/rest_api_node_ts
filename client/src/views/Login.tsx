@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react'
+import { useState, type FormEvent } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { login as loginService } from '../services/AuthService'
 import { useAuth } from '../contexts/AuthContext'

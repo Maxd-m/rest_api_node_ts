@@ -59,7 +59,7 @@ export default function EditProduct() {
                 </Link>
             </div>
 
-            {error && <ErrorMessage>{error}</ErrorMessage>}
+            {error && <ErrorMessage message={error} />}
             <Form
                 className="mt-10" 
                 method="POST"  

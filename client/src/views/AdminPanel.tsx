@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react'
+import { useState, type FormEvent } from 'react'
 import { createAdmin } from '../services/AuthService'
 import ErrorMessage from '../components/ErrorMessage'
 
