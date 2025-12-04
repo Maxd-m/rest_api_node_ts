@@ -1,6 +1,6 @@
 [build]
   base = "client"
-  command = "npm ci && vite build"
+  command = "npm install --prefer-offline && vite build"
   publish = "dist"
 
 [[redirects]]
